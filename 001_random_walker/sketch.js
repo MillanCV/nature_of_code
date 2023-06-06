@@ -1,7 +1,11 @@
+let walker;
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
+  background(200);
+  walker = new Walker();
 }
 
 function draw() {
-  background(30);
+  walker.step();
+  walker.display();
 }
