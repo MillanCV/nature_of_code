@@ -18,10 +18,21 @@ class Walker {
   
     step() {
         /* allows the walker to step randomly to any of the 8 pixels surrounding it */
-        let index_x = floor(random(this.prob.length));
-        let index_y= floor(random(this.prob.length));
+        let prob_x = random(1);
+        let prob_y = random(1);
         
-        this.x += this.prob[index_x]
-        this.y += this.prob[index_y]
+        if (prob_x < 0.5){
+            this.x += -1;
+        }
+        else {
+            this.x += 1;
+        }
+        
+        if (prob_y < 0.2){
+            this.y += -1;
+        }
+        else {
+            this.y += 1;
+        }
     }
   }
