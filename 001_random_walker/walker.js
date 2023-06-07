@@ -16,7 +16,7 @@ class Walker {
     }
   
     step() {
-        let choice = ceil(random(3));
+        let choice = floor(random(4));
         
         if (choice == 0) {
             this.x++;
@@ -27,7 +27,7 @@ class Walker {
         else if (choice == 2) {
             this.y++;
         }
-        else if (choice == 3) {
+        else  {
             this.y--;
         }
     }
