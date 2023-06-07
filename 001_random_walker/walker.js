@@ -17,8 +17,8 @@ class Walker {
   
     step() {
         /* allows the walker to step randomly to any of the 8 pixels surrounding it */
-        let step_x = floor(random(3))-1;
-        let step_y= floor(random(3))-1;
+        let step_x = (random(-1,1));
+        let step_y= (random(-1,1));
         
         this.x += step_x
         this.y += step_y
