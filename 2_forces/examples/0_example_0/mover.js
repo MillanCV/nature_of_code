@@ -6,7 +6,7 @@ class Mover{
     }
 
     applyForce(force){
-        this.acceleration = force
+        this.acceleration.add(force)
     }
 
     checkEdges() {
@@ -27,6 +27,7 @@ class Mover{
         this.velocity.add(this.acceleration)
         this.position.add(this.velocity)
         this.checkEdges()
+        this.acceleration.mult(0)
     }
 
     show() {

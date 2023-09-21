@@ -57,7 +57,62 @@ causa que un objeto con masa acelere".
     * Relacionado con la masa, esta el concepto de densidad, que es la cantidad
       de masa por unidad de volumen.
     * En el mundo de p5js:
-        * Empezamos pensando que cualquier objeto tiene masa igual a 1, esto da lugar a que la fuerza sea igual a la aceleracion.
+        * Empezamos pensando que cualquier objeto tiene masa igual a 1, esto da
+          lugar a que la fuerza sea igual a la aceleracion.
             * Los ejemplos del capitulo anterior responden a esta asociacion.
             * Fuerza -> Aceleracion -> Velocidad -> Posicion
-            
+
+---            
+# Acumulacion de fuerzas
+
+Sobre un objeto pueden actuar varias fuerzas. En este caso la aceleracion es
+igual a la suma de todas las fuerzas dividida por la masa.
+
+A la hora de programar el objeto es necesario que este sepa.
+
+La aceleracion no es acumulativa a lo largo del tiempo, antes de actualizarla se
+debe poner a cero.
+
+La aceleracion no tiene memoria! La velocidad si porque es constante segun las
+leyes de Newton.
+
+
+---
+# Paso del tiempo (time step)
+
+HAsta ahora no hemos tenido en cuenta el paso del tiempo, la "velocidad" con la
+que se actualiza la simulacion.
+
+Esta "velocidad" o "tasa" (rate) a menudo se incorpora como variable en los
+simuladores fisicos, a menudo denotada como dt (delta time).
+
+Ahora mismo asumimos que cada ciclo de dibujado representa un paso del tiempo.
+
+---
+# Masa
+
+Hemos estado trabajando sin pasa. Para incorporarla a nuestro "mover" debemos
+pensar en la unidad de medida
+
+### Unidad de medida
+
+En el canvas, contamos como el pixel como unidad de medida para la posicion, la
+velocidad o la aceleracion. Pero no podemos aplicarla a la masa. De forma basica
+vamos a equiparar el tamano de un objeto a su masa. Algo que no ocurre en el
+mundo real.
+
+La masa es un escalar, es un numero que describe la cantidad de masa de un
+objeto.
+
+---
+# Creando fuerzas
+
+Tenemos dos formas de crear fuerzas:
+* Crear una fuerza
+* Modelar una fuerza existente
+
+Un inciso, al programar una fuerza de gravedad, los objetos de menor masa
+reaccionan con mayor aceleracion de forma inintuitiva. Esto es normal para
+fuerzas como las del viento, pero no lo es para la gravedad. Segun Galileo, la
+fuerza de la gravedad es relativa a la masa de un objeto, cuanto mas grande un
+objeto, mas grande la fuerza de la gravedad.
