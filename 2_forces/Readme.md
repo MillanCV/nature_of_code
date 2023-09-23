@@ -116,3 +116,96 @@ reaccionan con mayor aceleracion de forma inintuitiva. Esto es normal para
 fuerzas como las del viento, pero no lo es para la gravedad. Segun Galileo, la
 fuerza de la gravedad es relativa a la masa de un objeto, cuanto mas grande un
 objeto, mas grande la fuerza de la gravedad.
+
+
+# Modelar fuerzas
+
+Veremos como modelar tres fuerzas, la friccion, "drag" y atraccion
+gravitacional.
+
+Necesitaremos:
+* Entender el concepto detras de la fuerza
+* Deconstruir la fuerza en dos partes
+  * Como calcular la direccion de la fuerza
+  * Como calcular la magnitud de la fuerza
+* Traducir la formula en codigo p5.js
+
+
+### Analizando fuerzas
+
+Contiene simbolos -> mirar en el libro "Parsing Formulas
+
+
+## Friccion
+
+Cuando dos superficies entran en contanco experimentan friccion.
+
+La fricción es una fuerza disipativa, lo que significa que convierte la energia
+kinetica del objeto en otra forma, dando la impresion de perdida o disipación.
+
+Al frenar un coche, este usa la friccion para  ralentizar el movimiento de las
+ruedas. La energia kinetica se convierte en energia termica.
+
+Un modelo completo incluiria casos separados para la friccion estatica y la
+friccion en movimiento. Nos quedamos con esta ultima, por simplicidad.
+
+friccion = -1*u*N*v 
+
+Dado que la friccion es un vector, vamos a determinar los dos componentes de su
+formula.
+
+- Direccion
+
+''' let friction = this.velocity.copy() friction.normalize() friction.mult(-1)
+// A partir de aqui sacamos la direccion '''
+
+- Magnitud
+
+magnitud = u * N
+
+* u = {
+  * coeficiente de friccion
+  * establece la fortaleza de la fuerza de friccion para una superficie
+    particular
+    * cuanto mas alta es, mas fuerte es la friccion. }
+
+* N = {
+  * fuerza normal
+  * es la fuerza perpendicular al objeto moviendose por una superficie
+    * un vehiculo presiona el suelo con gravedad, el suelo ejerce una fuerza
+    contraria sobre el vehiculo, la fuerza normal. Si el suelo esta inclinado,
+    la fuerza normal no apunta en direccion opuesta, sino que es perpendicular
+    al suelo }
+
+
+### Cuando aplicar friccion
+
+La friccion aparece cuando un cuerpo entra en contacto con una superficie,
+podemos limitarnos a aplicar friccion cuando una bola choca con el suelo, por
+ejemplo.
+
+
+### Multiples nombres
+
+La friccion siempre ocurre cuando un cuerpo atraviesa un liquido o gas.
+
+Las fuerzas resultantes tienen nombres diferentes pero significan lo mismo:
+
+* fuerza viscosa
+* drag force (fuerza de arraste?)
+* resistencia del aire
+* fluid resistance
+
+La fuerza del aire es proporcional a la velocidad de un objeto y a su superficie
+apuntando en direccion opuesta a la velocidad del objeto.
+
+El efecto es que el objeto frena.
+
+El comportamiento exacto es diferente -> mirar en el libro
+
+Para calcular estas fuerzas entran en juego:
+  * densidad
+  * la magnitudad de la velocidad del objeto al cuadrado
+  * la superficie frontal del objeto presionando sobre el gas o liquido.
+  * el coeficiente de arrastre, igual al coeficiente de friccion.
+  * la direccion de la velocidad
