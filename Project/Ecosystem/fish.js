@@ -50,6 +50,8 @@ class Fish{
     }
 
     draw(){
+        rectMode(CENTER)
+
         stroke(200)
         
         // Draw cross
@@ -62,7 +64,7 @@ class Fish{
         strokeJoin(ROUND)
         strokeWeight(6)
         noFill()
-        rectMode(CENTER)
+        
         square(this.position.x, this.position.y, this.size);
     }
 }

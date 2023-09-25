@@ -185,7 +185,7 @@ podemos limitarnos a aplicar friccion cuando una bola choca con el suelo, por
 ejemplo.
 
 
-### Multiples nombres
+### Aire y fluidos
 
 La friccion siempre ocurre cuando un cuerpo atraviesa un liquido o gas.
 
@@ -209,3 +209,28 @@ Para calcular estas fuerzas entran en juego:
   * la superficie frontal del objeto presionando sobre el gas o liquido.
   * el coeficiente de arrastre, igual al coeficiente de friccion.
   * la direccion de la velocidad
+  
+Para aplicar la fuerza de arrastre de un fluido o un liquido en nuestros
+sketches podemos definir el area de influencia.
+
+Para cada elemento vemos si esta contenido en ese area. Si lo esta, le aplicamos
+la fuerza.
+
+
+### Atraccion gravitacional
+
+Desde nuestro punto de vista vemos la gravedad como cosas que caen hacia abajo.
+
+Pero la realidad es mas compleja.
+
+De la misma forma que la Tierra tira de una manzana, la manzana tira de la
+tierra.
+
+Es la masividad de la tierra la que empequenece las otras interacciones
+gravitatorias.
+
+La fuerza gravitacional entre dos cuerpos es proporcional a la masa de los
+cuerpos e inversamente proporcional al cuadrado de la distancia entre ellos.
+
+G es la constante de la gravitacion universal. No es importante para objetos p5
+en el canvas. Podemos ajustarla a 1.
