@@ -234,3 +234,17 @@ cuerpos e inversamente proporcional al cuadrado de la distancia entre ellos.
 
 G es la constante de la gravitacion universal. No es importante para objetos p5
 en el canvas. Podemos ajustarla a 1.
+
+En nuestro mundo virtual la masa no es importante, pero podemos jugar con ella
+para obtener simulaciones interesantes.
+
+r es el vector unidad que apunta del objeo 1 al objeto 2. se puede calcular
+restando la posicion de uno de la del otro
+
+Cuanto mayor sean G y la masa mayor es la fuerza. Cuanto mayor es la distancia
+menor es la fuerza.
+
+
+### Un apunte sobre sistemas de cuerpos
+
+Podemos considerar que un array de objetos es un sistema.

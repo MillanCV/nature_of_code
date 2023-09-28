@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             // "file": "${workspaceFolder}/Projec/Ecosystem/index.html",
-            "url": "http://127.0.0.1:33153/Project/Ecosystem/",
+            "url": "http://127.0.0.1:39151/",
             "webRoot": "${workspaceFolder}"
         }
     ]
